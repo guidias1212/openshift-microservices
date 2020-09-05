@@ -1,4 +1,4 @@
-package com.consumer.integration.producer.domain.response;
+package com.gateway.integration.producer.domain.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -6,11 +6,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ProducerResponse {
+public class NotesResponse {
 
     @JsonProperty("id")
     private Long id;
 
-    @JsonProperty("model_name")
-    private String name;
+    @JsonProperty("text")
+    private String text;
 }
