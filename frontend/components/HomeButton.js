@@ -1,7 +1,7 @@
 const GoHomeButton = () => {
 
     const goHome = () => {
-        window.open("http://localhost:3000", "_self")
+        window.open("http://frontend-sandbox.apps.ca-central-1.starter.openshift-online.com/", "_self")
     }
 
     return (
