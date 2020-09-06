@@ -1,25 +1,27 @@
-const axios = require('axios');
-
-const getNotesFromServer = () => {
-    axios.get('http://gateway-sandbox.apps.ca-central-1.starter.openshift-online.com/gateway/getNotes')
-    .then(resposne => {
-        console.log(response.data);
-    })
-    .catch(error => {
-        console.log(error);
-    })
-}
-
+import {useState, useEffect} from 'react'
+import axios from 'axios'
 
 const NotesList = () => {
+    const [getText, setText] = useState(["Loading notes from server..."])
+    
+
+    useEffect(async () => {
+        const response = await axios.get('http://gateway-sandbox.apps.ca-central-1.starter.openshift-online.com/gateway/getNotes');
+        setText(response.data.notes);
+    }, [])
+
     return (
-        <>
-        {getNotesFromServer()}
-        <p>This is a note</p>
-        <br/>
-        <p>This is another note</p>
-        <br/>
-        </>
+        <div>
+            {
+                getText.map((notes, index) => {
+                    return (
+                        <div key={index}>
+                            <p>{notes}</p>
+                        </div>
+                    )
+                })
+            }
+        </div>
     )
   }
   

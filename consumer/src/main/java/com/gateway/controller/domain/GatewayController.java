@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin
 @RequestMapping({"/gateway"})
 public class GatewayController {
 
@@ -16,14 +17,12 @@ public class GatewayController {
     NotesFacade notesFacade = new NotesFacade();
 
     @GetMapping
-    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/getNotes", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<GatewayResponse> getNotes(){
         return ResponseEntity.ok().body(notesFacade.getNotes());
     }
 
     @PostMapping
-    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/writeNote", produces = MediaType.APPLICATION_JSON_VALUE)
     public String writeNote(@RequestBody GatewayRequest note) {
         notesFacade.writeNote(note);
@@ -31,7 +30,6 @@ public class GatewayController {
     }
 
     @DeleteMapping
-    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "/clear")
     public String clearNotes() {
         notesFacade.clearNotes();

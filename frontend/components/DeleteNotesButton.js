@@ -1,7 +1,10 @@
+import axios from 'axios'
+
 const DeleteNoteButton = () => {
 
     const eraseNotes = () => {
-        alert("Send a DELETE msg to Backend")
+        axios.delete('http://gateway-sandbox.apps.ca-central-1.starter.openshift-online.com/gateway/clear')
+        // alert("Messages clear")
     }
   
     return (
