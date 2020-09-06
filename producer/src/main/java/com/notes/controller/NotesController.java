@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/notes")
 public class NotesController {
 
@@ -27,7 +28,7 @@ public class NotesController {
         return notesRepository.findAll();
     }
 
-    @DeleteMapping("/clear")
+    @PostMapping("/clear")
     public @ResponseBody String clearNotes(){
         notesRepository.deleteAll();
         return "All notes have been erased.";
