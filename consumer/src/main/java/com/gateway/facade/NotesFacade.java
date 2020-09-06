@@ -1,5 +1,6 @@
 package com.gateway.facade;
 
+import com.gateway.controller.domain.request.GatewayRequest;
 import com.gateway.controller.domain.response.GatewayResponse;
 import com.gateway.integration.producer.service.NotesService;
 import com.gateway.mapper.NotesMapper;
@@ -15,7 +16,15 @@ public class NotesFacade {
     @Autowired
     NotesMapper notesMapper = new NotesMapper();
 
-    public GatewayResponse getResponse() {
+    public GatewayResponse getNotes() {
         return notesMapper.mapNotesResponseToGatewayResponse(notesService.getProducerResponse());
+    }
+
+    public void writeNote(GatewayRequest note) {
+        notesService.writeNote(note);
+    }
+
+    public void clearNotes() {
+        notesService.clearNotes();
     }
 }

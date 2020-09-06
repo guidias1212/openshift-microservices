@@ -8,8 +8,8 @@ import java.util.List;
 
 @Getter
 @Setter
-public class GatewayResponse {
+public class GatewayRequest {
 
-    @JsonProperty("notes")
-    private List<String> notes;
+    @JsonProperty("text")
+    private String note;
 }
