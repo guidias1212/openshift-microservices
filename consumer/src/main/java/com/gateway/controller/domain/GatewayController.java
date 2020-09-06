@@ -29,7 +29,7 @@ public class GatewayController {
         return "Note added";
     }
 
-    @DeleteMapping
+    @PostMapping
     @RequestMapping(value = "/clear")
     public String clearNotes() {
         notesFacade.clearNotes();
