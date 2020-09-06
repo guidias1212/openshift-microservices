@@ -3,7 +3,8 @@ import axios from 'axios'
 const DeleteNoteButton = () => {
 
     const eraseNotes = () => {
-        axios.delete('http://gateway-sandbox.apps.ca-central-1.starter.openshift-online.com/gateway/clear')
+        axios.post('http://gateway-sandbox.apps.ca-central-1.starter.openshift-online.com/gateway/clear')
+        location.reload();
     }
   
     return (
