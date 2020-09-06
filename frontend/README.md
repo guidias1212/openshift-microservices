@@ -1,2 +1,2 @@
-## My Noters App
+## My Notes App
 
