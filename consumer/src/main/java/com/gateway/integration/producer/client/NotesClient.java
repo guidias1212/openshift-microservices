@@ -18,6 +18,6 @@ public interface NotesClient {
     @RequestMapping(method = RequestMethod.POST, value = "/notes/new")
     String writeNote(GatewayRequest gatewayRequest);
 
-    @RequestMapping(method = RequestMethod.POST, value = "/notes/clear")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/notes/clear")
     String clearNotes();
 }

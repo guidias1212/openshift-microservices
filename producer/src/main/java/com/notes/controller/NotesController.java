@@ -3,14 +3,10 @@ package com.notes.controller;
 import com.notes.model.Notes;
 import com.notes.repository.NotesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/notes")
 public class NotesController {
 
@@ -28,7 +24,7 @@ public class NotesController {
         return notesRepository.findAll();
     }
 
-    @PostMapping("/clear")
+    @DeleteMapping("/clear")
     public @ResponseBody String clearNotes(){
         notesRepository.deleteAll();
         return "All notes have been erased.";

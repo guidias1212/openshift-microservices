@@ -7,16 +7,16 @@ const NotesList = () => {
 
     useEffect(async () => {
         const response = await axios.get('http://notes-sandbox.apps.ca-central-1.starter.openshift-online.com/notes/getAll');
-        setText(response.data.notes);
+        setText(response.data);
     }, [])
 
     return (
         <div>
             {
-                getText.map((notes, index) => {
+                getText.map((data, index) => {
                     return (
                         <div key={index}>
-                            <p>{notes}</p>
+                            <p>{data.text}</p>
                         </div>
                     )
                 })
