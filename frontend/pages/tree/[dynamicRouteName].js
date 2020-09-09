@@ -5,7 +5,7 @@ import WriteNoteButton from '../../components/WriteNoteButton'
 import DeleteNoteButton from '../../components/DeleteNotesButton'
 import NotesComponent from '../../components/NotesComponent'
 
-const Dias = () => {
+const NotesPage = () => {
   const router = useRouter()
   const { dynamicRouteName } = router.query
   
@@ -25,4 +25,4 @@ const Dias = () => {
   )
 }
 
-export default Dias
+export default NotesPage
