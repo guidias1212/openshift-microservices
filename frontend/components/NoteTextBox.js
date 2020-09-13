@@ -1,7 +1,7 @@
 const Note = () => {
   return (
     <>
-      <p>Write a note:</p>
+      <h2>Write:</h2>
       <input type='text' id="note-input">
       </input>
       <br/>

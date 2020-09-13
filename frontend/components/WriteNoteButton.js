@@ -11,7 +11,7 @@ const WriteNoteButton = () => {
   
     return (
         <>
-        <input type='button' value='Send' onClick={writeNotes}/>
+        <input class='btn btn-success mx-2' type='button' value='Send' onClick={writeNotes}/>
         </>
     )
   }

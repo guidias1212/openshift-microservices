@@ -9,7 +9,7 @@ const DeleteNoteButton = () => {
   
     return (
         <>
-        <input type='button' value='Erase' onClick={eraseNotes}/>
+        <input class='btn btn-danger' type='button' value='Erase' onClick={eraseNotes}/>
         </>
     )
   }

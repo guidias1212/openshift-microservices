@@ -3,7 +3,7 @@ import NotesList from './NotesList'
 const NotesComponent = () => {
     return (
         <>
-        <h2>My Notes:</h2>
+        <h2>Notes:</h2>
         <NotesList/>
         </>
     )
