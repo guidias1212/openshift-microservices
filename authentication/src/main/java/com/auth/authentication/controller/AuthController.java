@@ -1,5 +1,6 @@
-package com.auth.authentication;
+package com.auth.authentication.controller;
 
+import com.auth.authentication.domain.Request;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

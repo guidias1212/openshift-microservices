@@ -1,4 +1,4 @@
-package com.auth.authentication;
+package com.auth.authentication.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
