@@ -7,5 +7,5 @@ CREATE TABLE USERS (
 );
 
 INSERT INTO USERS (ID, USERNAME, PRIVATE_KEY) VALUES
-  (1, 'admin', 'admin'),
-  (2, 'admin2', 'admin2');
+  (1, 'admin', '$2a$10$t96EqwIIKP1LKJgj5QLpQ.fR0yH4rF2ZuCvgalhPSk9p/dO/sG03u'),
+  (2, 'admin2', '$2a$10$sUmazUBY6qIkr/.6uXw2fujLBbPmKNlrSKWOpu7FqOgaI3oUAvfjy');

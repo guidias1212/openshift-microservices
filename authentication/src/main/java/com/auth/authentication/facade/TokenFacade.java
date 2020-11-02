@@ -9,6 +9,9 @@ import com.auth0.jwt.algorithms.Algorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.List;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+
+import static org.springframework.security.crypto.bcrypt.BCrypt.checkpw;
 
 @Component
 public class TokenFacade {
@@ -23,10 +26,14 @@ public class TokenFacade {
         final String user = request.getUser();
         final String publicKey = request.getPublicKey();
 
-        List<DbEntity> dbEntityList = dbEntityRepository.findByUsernameAndPrivateKey(user, publicKey);
+        //TODO: Add code to fix the changing privateKeys generated
+        String privateKey = BCrypt.hashpw(publicKey, BCrypt.gensalt());
+        Boolean isAuthentic = checkpw(publicKey, privateKey);
 
-        if (dbEntityList.size() > 0) {
-            Algorithm algorithm = Algorithm.HMAC256(publicKey);
+        List<DbEntity> dbEntityList = dbEntityRepository.findByUsernameAndPrivateKey(user, privateKey);
+
+        if (dbEntityList.size() > 0 && isAuthentic) {
+            Algorithm algorithm = Algorithm.HMAC256(privateKey);
             String token = JWT.create()
                     .withIssuer(user)
                     .sign(algorithm);
