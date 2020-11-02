@@ -2,7 +2,6 @@ package com.auth.authentication.domain;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 @Builder
