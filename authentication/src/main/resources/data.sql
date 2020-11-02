@@ -1,11 +1,11 @@
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS USERS;
 
-CREATE TABLE users (
-  id INT AUTO_INCREMENT  PRIMARY KEY,
-  username VARCHAR(250) NOT NULL,
-  privateKey VARCHAR(250) NOT NULL
+CREATE TABLE USERS (
+  ID INT AUTO_INCREMENT  PRIMARY KEY,
+  USERNAME VARCHAR(250) NOT NULL,
+  PRIVATE_KEY VARCHAR(250) NOT NULL
 );
 
-INSERT INTO users (username, privateKey) VALUES
-  ('admin', 'admin'),
-  ('admin2', 'admin2');
+INSERT INTO USERS (ID, USERNAME, PRIVATE_KEY) VALUES
+  (1, 'admin', 'admin'),
+  (2, 'admin2', 'admin2');
