@@ -16,10 +16,8 @@ public class DbEntity {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @JsonProperty("id")
     private Long id;
 
-    @JsonProperty("text")
     private String username;
     private String privateKey;
 }
