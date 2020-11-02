@@ -1,5 +1,6 @@
 package com.auth.authentication.domain;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +11,7 @@ import javax.persistence.Entity;
 
 @Getter
 @Setter
+@Builder
 @Entity
 public class DbEntity {
 
