@@ -1,12 +1,13 @@
 package com.auth.authentication.domain;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
-@Setter
+@Builder
 public class Response {
 
-    private String token;
-    private String message;
+    private final String token;
+    private final String message;
 }

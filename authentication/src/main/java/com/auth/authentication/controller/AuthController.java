@@ -1,6 +1,8 @@
 package com.auth.authentication.controller;
 
 import com.auth.authentication.domain.Request;
+import com.auth.authentication.domain.Response;
+import com.auth.authentication.facade.TokenFacade;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +15,8 @@ public class AuthController {
 
     @PostMapping
     @RequestMapping(value = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Request authenticate(@RequestBody Request request) {
-        return request;
+    public Response authenticate(@RequestBody Request request) {
+        Response response = TokenFacade.generateToken(request);
+        return response;
     }
 }
